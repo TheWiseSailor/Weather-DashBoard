@@ -19,10 +19,78 @@
       <h3>Search for a city!</h3>
       <form id="searchLocation">
         <input type="text" id="searchBar" />
-        <input type="submit" id="searchButton" value="" />
+        <input type="submit" id="searchButton" value="put some kind of location emoji here"/>
+        </form>
         <!-- get all of the html done by tomorrow, and if can, get half or all of the css done as well. 
       that way you can spend tuesday, wed, and thursday on javascript-->
-      </form>
+      <div id="searchforCities">
+      <div id="searchforCity" id="city1"></div>
+      <div id="searchforCity" id="city2"></div>
+      <div id="searchforCity" id="city3"></div>
+      <div id="searchforCity" id="city4"></div>
+      <div id="searchforCity" id="city5"></div>
+      <div id="searchforCity" id="city6"></div>
+      <div id="searchforCity" id="city7"></div>
+      <div id="searchforCity" id="city8"></div>
+      </div>
     </daybar>
+    <main>
+      <div id="todaysWeather">
+        <h2> 
+          <span id="currentCity">Search City</span>
+          (<span id="currentDate">Today's Date</span>)
+          <img src="" width="50" height="50" id="currentIcon"/>
+        </h2>
+        <p> Temperature: <span id="currentTemperature">-</span>°F</p>
+        <p> Humidity: <span id="currentHumidity">-</span>%</p>
+        <p>Wind Speed: <span id="currentWind">-</span>MPH</p>
+        <p>UV Index: <span id="currentUVIndex">-</span></p>
+      </div>
+      <div id="weatherForecast">
+        <h4> 5-Day Forecast</h4>
+      <div id="dateContainer">
+        <div class="dateBox">
+          <h4 id="day1"> Tomorrow</h4>
+          <p class="weatherEmoji">
+            <img src="" width="25" heigh="25" id="dayIcon"/>
+          </p>
+          <p> Temp: <span id="day1Temp">-</span>°F</p>
+          <p> Humidity: <span id="day1Humidity">-</span>%</p>
+          </div>
+          <div class="dateBox">
+            <h4 id="day2"> day after next</h4>
+            <p class="weatherEmoji">
+              <img src="" width="25" heigh="25" id="dayIcon"/>
+            </p>
+            <p> Temp: <span id="day2Temp">-</span>°F</p>
+            <p> Humidity: <span id="day2Humidity">-</span>%</p>
+            </div>
+            <div class="dateBox">
+              <h4 id="day3"> day after next</h4>
+              <p class="weatherEmoji">
+                <img src="" width="25" heigh="25" id="dayIcon"/>
+              </p>
+              <p> Temp: <span id="day3Temp">-</span>°F</p>
+              <p> Humidity: <span id="day3Humidity">-</span>%</p>
+              </div>
+              <div class="dateBox">
+                <h4 id="day4"> day after next</h4>
+                <p class="weatherEmoji">
+                  <img src="" width="25" heigh="25" id="dayIcon"/>
+                </p>
+                <p> Temp: <span id="day4Temp">-</span>°F</p>
+                <p> Humidity: <span id="day4Humidity">-</span>%</p>
+                </div>
+                <div class="dateBox">
+                  <h4 id="day5"> day after next</h4>
+                  <p class="weatherEmoji">
+                    <img src="" width="25" heigh="25" id="dayIcon"/>
+                  </p>
+                  <p> Temp: <span id="day5Temp">-</span>°F</p>
+                  <p> Humidity: <span id="day5Humidity">-</span>%</p>
+          </div>
+        </div>
+      </main>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
