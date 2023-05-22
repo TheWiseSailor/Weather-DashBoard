@@ -11,7 +11,7 @@ body {
   background-image: url("https://images.unsplash.com/photo-1466927593098-4d4aa7a2b2d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
   background-size: cover;
   background-position: center;
-  /* overflow: hidden;*/
+  overflow: hidden;
 }
 h1 {
   margin: 0;
@@ -24,23 +24,21 @@ h2,
 h4 {
   text-align: center;
 }
-#dateContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+
 #todaysWeather {
   width: 100%;
   padding: 15px;
   text-align: center;
   position: relative;
 }
+
 aside {
   float: left;
   width: 20%;
   height: 100vh;
   padding: 10px;
 }
+
 aside h3 {
   margin: 0 auto;
   margin-bottom: 5px;
@@ -65,10 +63,50 @@ aside h3 {
   width: 200px;
   height: 30px;
   border: rgba(255, 255, 255, 0.288) 1px solid;
-  border-radius: 10px;
+  border-radius: 5px;
   margin-bottom: 15px;
 }
+
 #searchBar:focus {
   outline: none;
-  border: var(--buttonColorHover);
+  border: var(--buttonColorHover) 1px solid;
+}
+
+#searchButton {
+  background: rgba(53, 84, 109, 0);
+  border-radius: 9px;
+  border-width: 1.5px;
+  text-align: center;
+  line-height: 30px;
+  margin-bottom: 15px;
+}
+
+#searchButton:hover {
+  cursor: pointer;
+  border: var(--buttonColorHover) 2.5px solid;
+}
+
+#searchButton:focus {
+  outline: none;
+}
+.searchedCities {
+  background: rgba(255, 255, 255, 0.555);
+  height: auto;
+
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.searchedCity {
+  height: 50px;
+  padding-left: 25px;
+  line-height: 50px;
+}
+
+/* media*/
+@media screen and (max-width: 768px) {
+  h1 {
+    padding: 2%;
+  }
 }
