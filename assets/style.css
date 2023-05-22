@@ -20,9 +20,12 @@ h1 {
   padding: 1%;
   text-align: center;
 }
-h2,
+h2 {
+  text-align: center;
+}
 h4 {
   text-align: center;
+  margin-right: 40px;
 }
 main {
   float: left;
@@ -38,6 +41,7 @@ main {
   padding: 15px;
   text-align: center;
   position: relative;
+  right: 35px;
 }
 .weatherEmoji {
   padding-left: 10px;
