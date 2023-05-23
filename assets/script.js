@@ -67,3 +67,13 @@ function handleSearch(event) {
     displaySearchedCities();
   }
 }
+//now I need to make the function to display the searched citi9es
+function displaySearchedCities() {
+  searchedCities.innerHTML = "";
+
+  for (let i = 0; i < searchedCitiesArr.length; i++) {
+    const cityDiv = document.createElement("div");
+    cityDiv.classList.add("searchedCity");
+    searchedCities.appendChield(cityDiv);
+  }
+}
