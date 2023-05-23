@@ -8,7 +8,7 @@
 //WHEN I click on a city in the search history
 //THEN I am again presented with current and future conditions for that city
 //I want to make it to where the whole thing is centered on the screen, to which is functional with no flaws in the console or the network
-
+//no errors in the console log when ran
 //getting started with my api key
 const apiKey = "db7e8293fc07aa24abd5218fa943315d";
 //getting this all over with, starting with all the DOM elements, ive made way too many in the html
@@ -68,12 +68,34 @@ function handleSearch(event) {
   }
 }
 //now I need to make the function to display the searched citi9es
+
 function displaySearchedCities() {
   searchedCities.innerHTML = "";
 
   for (let i = 0; i < searchedCitiesArr.length; i++) {
     const cityDiv = document.createElement("div");
     cityDiv.classList.add("searchedCity");
-    searchedCities.appendChield(cityDiv);
+    cityDiv.textContent = searchedCitiesArr[i];
+    searchedCities.appendChild(cityDiv);
   }
 }
+
+function handleSearch() {
+  // Your search functionality implementation
+  searchButton.addEventListener("click", handleSearch);
+
+  searchedCities.addEventListener("click", ({ target }) => {
+    if (target.classList.contains("searchedCity")) {
+      const city = target.innerText;
+      getWeather(city);
+    }
+  });
+}
+function getWeather(city) {
+  const apiKey = "db7e8293fc07aa24abd5218fa943315d";
+  const encodedCity = encodeURIComponent(city);
+  const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+}
+
+// Fetch weather data from API
