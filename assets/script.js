@@ -42,3 +42,28 @@ const day5 = document.getElementById("day5");
 const day5Icon = document.getElementById("day5Icon");
 const day5Temp = document.getElementById("day5Temp");
 const day5humidity = document.getElementById("day5humidity");
+
+//thisn will retrieve the searched cities from local storage
+var searchedCitiesArr =
+  JSON.parse(localStorage.getItem("searchedCities")) || [];
+
+//this will be a function to handle the search bar
+function handleSearch(event) {
+  event.preventDefault();
+
+  const city = searchBar.ariaValueMax.trim();
+  if (city !== "") {
+    getWeather(city);
+    searchBar.value = "";
+    //adding the city cities to the cities array
+    searchedCitiesArr.unshift(city);
+    //limiting the number of saved cities to 8 so that way it wont cover the entire left portion of the screen and cause any lagg issues if u start to go over a certain number
+    if (searchedCitiesArr.length > 8) {
+      searchedCitiesArr.pop();
+    }
+    //now to make a localstoraghe for the searched cities array in the local storage
+    localStorage.setItem("searchedCities", JSON.stringify(searchedCitiesArr));
+    //making it to where it displays the searched cities
+    displaySearchedCities();
+  }
+}
