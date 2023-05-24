@@ -10,7 +10,7 @@
 //I want to make it to where the whole thing is centered on the screen, to which is functional with no flaws in the console or the network
 //no errors in the console log when ran
 //getting started with my api key
-const apiKey = "db7e8293fc07aa24abd5218fa943315d";
+const apiKey = "1850c488fdbe3a1cd0ab670585eea465";
 //getting this all over with, starting with all the DOM elements, ive made way too many in the html
 const searchBar = document.getElementById("searchBar");
 const searchButton = document.getElementById("searchButton");
@@ -96,6 +96,39 @@ function getWeather(city) {
   const encodedCity = encodeURIComponent(city);
   const currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
-}
 
-// Fetch weather data from API
+  //fetching the current weather
+  fetch(currentWeatherURL)
+    .then((response) => response.json())
+    .then((data) => {
+      // Display current weather
+      displayCurrentWeather(data);
+      const currentWeatherURL =
+        "http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}?date=1527811200&opacity=0.9&fill_bound=true&appid={API key}";
+      // Fetch forecast
+      fetch(forecastURL)
+        .then((response) => response.json())
+        .then((data) => {
+          // Display forecast
+          displayForecast(data);
+        })
+        .catch((error) => console.log("Error fetching forecast:", error));
+    })
+    .catch((error) => console.log("Error fetching current weather:", error));
+}
+//dispplaying current weather data
+function displayCurrentWeather(data) {
+  const cityName = data.name;
+  const iconCode = data.weather[0].icon;
+  const temperature = data.main.temp;
+  const humidity = data.main.humidity;
+  const windSpeed = data.wind.speed;
+}
+//load the weather for a defauklt city when the page loads
+//and displaying the searched cities on the page when it loads
+window.addEventListener("load", function () {
+  const defaultCity = " New York";
+  displaySearchedCities();
+});
+
+//neeed to get this done so i can have time to work on the project more
