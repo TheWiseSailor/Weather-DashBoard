@@ -131,4 +131,4 @@ window.addEventListener("load", function () {
   displaySearchedCities();
 });
 
-//neeed to get this done so i can have time to work on the project more
+//neeed to get this done so i can have time to work on the project mor//working on 2 projects at the same time... this will get done first because it is due tomorrow
