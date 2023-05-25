@@ -123,12 +123,31 @@ function displayCurrentWeather(data) {
   const temperature = data.main.temp;
   const humidity = data.main.humidity;
   const windSpeed = data.wind.speed;
-}
-//load the weather for a defauklt city when the page loads
+
+  //set current weather in the dom
+  currentCity.textContent = cityName;
+  currentDate.textContent = date;
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/w/${iconCode}.png`
+  );
+  currentTemperature.textContent = temperature.toFixed(1);
+  currentHumidity.textContent = humidity;
+  currentWind.textContent = windSpeed.toFixed(1);
+
+  //fetching uvindex
+  const uvIndexURL = `https://api.openweathermap.org/data/2.5/uvi?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${apiKey}`;
+  fetch(uvIndexURL)
+    .then((response) => response.JSON())
+    .then((data) => {
+      const uvIndex = data.value;
+      CurrentUVIndex.textContent = uvIndex;
+    });
+} //load the weather for a defauklt city when the page loads
 //and displaying the searched cities on the page when it loads
-window.addEventListener("load", function () {
-  const defaultCity = " New York";
-  displaySearchedCities();
-});
+//window.addEventListener("load", function () {
+//  const defaultCity = " New York";
+//  displaySearchedCities();
+//});
 
 //neeed to get this done so i can have time to work on the project mor//working on 2 projects at the same time... this will get done first because it is due tomorrow
