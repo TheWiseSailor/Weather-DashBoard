@@ -143,6 +143,14 @@ function displayCurrentWeather(data) {
       const uvIndex = data.value;
       CurrentUVIndex.textContent = uvIndex;
     });
+  //now to change the background color of the uv index according to its valdue
+  if (uvIndex < 3) {
+    CurrentUVIndex.style.backgroundColor = "green";
+  } else if (uvIndex < 6) {
+    CurrentUVIndex.style.backgroundColor = "yellow";
+  } else {
+    CurrentUVIndex.style.backgroundColor = "red";
+  }
 } //load the weather for a defauklt city when the page loads
 //and displaying the searched cities on the page when it loads
 //window.addEventListener("load", function () {
