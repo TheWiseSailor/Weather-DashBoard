@@ -142,16 +142,34 @@ function displayCurrentWeather(data) {
     .then((data) => {
       const uvIndex = data.value;
       CurrentUVIndex.textContent = uvIndex;
-    });
-  //now to change the background color of the uv index according to its valdue
-  if (uvIndex < 3) {
-    CurrentUVIndex.style.backgroundColor = "green";
-  } else if (uvIndex < 6) {
-    CurrentUVIndex.style.backgroundColor = "yellow";
-  } else {
-    CurrentUVIndex.style.backgroundColor = "red";
+
+      //now to change the background color of the uv index according to its valdue
+      if (uvIndex < 3) {
+        CurrentUVIndex.style.backgroundColor = "green";
+      } else if (uvIndex < 6) {
+        CurrentUVIndex.style.backgroundColor = "yellow";
+      } else {
+        CurrentUVIndex.style.backgroundColor = "red";
+      }
+      CurrentUVIndex.style.color = "black";
+    })
+    .catch((error) => console.log("Error Fetching UV index:", error));
+}
+//displaying the forcast data
+function displayForecast(data) {
+  const forecastList = data.list;
+  const forcastData = [];
+
+  //making itto where we can separate it to 12:pm each day
+  for (let i = 0; i < forecastList.length; i++) {
+    const forecastTime = forecastList[i].dt_text.split(" ")[1];
+    if (forecastTime === "12:00:00") {
+      forecastData.push(forecastList[i]);
+    }
   }
-} //load the weather for a defauklt city when the page loads
+}
+
+//load the weather for a defauklt city when the page loads
 //and displaying the searched cities on the page when it loads
 //window.addEventListener("load", function () {
 //  const defaultCity = " New York";
