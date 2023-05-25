@@ -167,8 +167,16 @@ function displayForecast(data) {
       forecastData.push(forecastList[i]);
     }
   }
-}
 
+  //setting the forcast values inthe DOM
+  for (let i = 0; i < forecastData.length; i++) {
+    const forecast = forecastData[i];
+    const date = new Date(forecast.dt_txt).toLocaleDateString("en-US");
+    const iconCode = forecast.weather[0].icon;
+    const temperature = forecast.main.temp;
+    const humidity = forecast.main.humidity;
+  }
+}
 //load the weather for a defauklt city when the page loads
 //and displaying the searched cities on the page when it loads
 //window.addEventListener("load", function () {
