@@ -30,7 +30,13 @@ Click the search button or press Enter. <br>
 The Application will display the current weather conditions and a 5-day forecast for the searched city. <br>
 The city will be added to the searched history, which you can click on to view the weather information engine. <br>
 Then, all you have to do is just repeat the given steps above and your good to go.
+# Technologies Used
 
+**HTML**<br>
+**CSS** <br>
+**JavaScript**<br>
+**Third Party API (OpenWeatherMap)**<br> 
+Weat
 # Sources 
 https://openweathermap.org/api <br>
 https://www.w3schools.com/<br>
@@ -39,3 +45,16 @@ https://stackoverflow.com/<br>
 https://docs.github.com/en<br>
 https://developer.mozilla.org/en-US/<br>
 
+# License
+This is under the MIT License.
+
+# Deployed Site
+
+https://thewisesailor.github.io/Weather-DashBoard/
+
+# Deployed Repository
+https://github.com/TheWiseSailor/Weather-DashBoard
+
+# Final Product
+
+![Screenshot 2023-05-25 210235](https://github.com/TheWiseSailor/Weather-DashBoard/assets/68026214/b643f251-9a4e-47da-85bb-51afff0e6c92)
